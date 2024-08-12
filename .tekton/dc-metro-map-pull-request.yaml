@@ -8,14 +8,14 @@ metadata:
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "base-bmnpgx"
+      == "base-zigtvs"
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: appstudio
     appstudio.openshift.io/component: dc-metro-map
     pipelines.appstudio.openshift.io/type: build
   name: dc-metro-map-on-pull-request
-  namespace: ex-registry-helf-tenant
+  namespace: ex-registry-fxqy-tenant
 spec:
   params:
   - name: git-url
@@ -23,7 +23,7 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/qijing/ex-registry-helf-tenant/appstudio/dc-metro-map:on-pr-{{revision}}
+    value: quay.io/qijing/ex-registry-fxqy-tenant/appstudio/dc-metro-map:on-pr-{{revision}}
   - name: image-expires-after
     value: 5d
   - name: dockerfile
