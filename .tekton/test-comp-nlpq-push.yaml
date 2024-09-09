@@ -7,14 +7,14 @@ metadata:
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "base-muywlp"
+      == "base-vyruwl"
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: test-app-isea
+    appstudio.openshift.io/application: test-app-dxhu
     appstudio.openshift.io/component: test-comp-nlpq
     pipelines.appstudio.openshift.io/type: build
   name: test-comp-nlpq-on-push
-  namespace: build-e2e-anlc-tenant
+  namespace: build-e2e-uaar-tenant
 spec:
   params:
   - name: git-url
@@ -22,7 +22,7 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-appstudio-qe/build-e2e-anlc-tenant/test-app-isea/test-comp-nlpq:{{revision}}
+    value: quay.io/redhat-appstudio-qe/build-e2e-uaar-tenant/test-app-dxhu/test-comp-nlpq:{{revision}}
   - name: dockerfile
     value: docker/Dockerfile
   - name: path-context
@@ -190,7 +190,7 @@ spec:
         - name: name
           value: prefetch-dependencies
         - name: bundle
-          value: quay.io/konflux-ci/tekton-catalog/task-prefetch-dependencies:0.1@sha256:058a59f72997c9cf1be20978eb6a145d8d4d436c6098f2460bd96766bb363b20
+          value: quay.io/konflux-ci/tekton-catalog/task-prefetch-dependencies:0.1@sha256:fd1fda0dcf53938860ae6fcba37f5572ae25ae02dba44c15754fb7ba7549fb5c
         - name: kind
           value: task
         resolver: bundles
